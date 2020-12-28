@@ -1,7 +1,7 @@
 //To see a much more advanced version of this example, head over to my site and visit my SketchMeh program:
 //http://www.marcusparsons.com/projects/sketchmeh
 
-//This was written in Pure JS so that it doesn't clash with a jQuery build
+//This was written in Pure JS so that it doesn't clash with builds built on libraries/frameworks/etc.
 
 var _input = document.querySelector("#canvasInput");
 var canvas = document.querySelector("#canvas");
