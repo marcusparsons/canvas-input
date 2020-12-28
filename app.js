@@ -1,14 +1,10 @@
 //To see a much more advanced version of this example, head over to my site and visit my SketchMeh program:
 //http://www.marcusparsons.com/projects/sketchmeh
 
-//this was written in Pure JS with a binded selector of _
-//so that it doesn't clash with a jQuery build
+//This was written in Pure JS so that it doesn't clash with a jQuery build
 
-var _ = document.querySelector.bind(document);
-//The two _ below, except for _input (which is a variable)
-//think of them as = document.querySelector
-var _input = _("#canvasInput");
-var canvas = _("#canvas");
+var _input = document.querySelector("#canvasInput");
+var canvas = document.querySelector("#canvas");
 var context = canvas.getContext('2d');
 var tool = {};
 //"tool" is just an object that holds various tools that you are probably going to reuse
@@ -18,7 +14,7 @@ tool.color = "#000000";
 tool.startx = 0;
 tool.starty = 0;
 
-_("#canvas").addEventListener('click', function (e) {
+document.querySelector("#canvas").addEventListener('click', function (e) {
     //set starting x and y points
     //set the x and y positions to where they are relative to the page
     tool.startx = e.pageX;
@@ -34,7 +30,7 @@ _("#canvas").addEventListener('click', function (e) {
 
 _input.addEventListener('keyup', function(e) {
   //Pressing enter to put the text to the canvas
-  if (e.which === 13) {
+  if (e.key === 'Enter') {
     e.preventDefault();
     //An easy way to use context.font to set the font family and size
     //context.font = "12px sans-serif";
@@ -59,7 +55,8 @@ _input.addEventListener('keyup', function(e) {
     _input.value = "";
   }
   //Pressing Escape to cancel
-  if (e.which === 27) {
+  if (e.key === 'Escape') {
+    //prevent the default action of pressing Escape
     e.preventDefault();
     //same as the last step of the enter button
     //set the display to none for the input and erase its value
