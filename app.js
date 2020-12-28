@@ -14,7 +14,7 @@ tool.color = "#000000";
 tool.startx = 0;
 tool.starty = 0;
 
-document.querySelector("#canvas").addEventListener('click', function (e) {
+canvas.addEventListener('click', function (e) {
     //set starting x and y points
     //set the x and y positions to where they are relative to the page
     tool.startx = e.pageX;
